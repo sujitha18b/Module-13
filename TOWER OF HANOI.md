@@ -1,13 +1,13 @@
-# Exp.No:35  
+# Exp.No:13 E 
 ## TOWER OF HANOI
 
----
+
 
 ### AIM  
 To write a Python program to implement **Tower of Hanoi** and display all the moves of the disks using a recursive function.  
 Consider the names of the tower pegs as A, B, C. Get the number of disks value from the user.
 
----
+
 
 ### ALGORITHM  
 
@@ -27,18 +27,23 @@ Consider the names of the tower pegs as A, B, C. Get the number of disks value f
 5. Call `TowerOfHanoi(n, 'A', 'C', 'B')` to start the process.
 6. **End the program.**
 
----
+
 
 ### PROGRAM  
 
-```
-
-
-```
+def TowerOfHanoi(n , source, destination, auxiliary):  <br />
+    if(n>0):  <br />
+        TowerOfHanoi(n-1,source,auxiliary,destination) <br />
+        print(f"Move disk from {source} to {destination}") <br />
+  
+n=int(input()) <br />
+print("No. of disks =",n) 
 
 ### OUTPUT
+
+![Screenshot 2025-05-07 105328](https://github.com/user-attachments/assets/a5cedace-582b-4a39-b0cc-ea61eefe0386)
 
 
 
 ### RESULT
-
+ Thus, the given python program is implemented and executed sucessfully.

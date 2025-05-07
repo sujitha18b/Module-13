@@ -1,12 +1,11 @@
-# Exp.No:32  
+# Exp.No:13 A
 ## CONVERSION OF INFIX TO POSTFIX
 
----
 
 ### AIM  
 To write a Python program to convert a given Infix expression to Postfix expression by following the precedence and associative rules. The input expression contains only Division, Subtraction, and Bitwise AND operators. A dictionary is used to set the priority for operators, and a set is used to hold the operators used in the given expression.
 
----
+
 
 ### ALGORITHM
 
@@ -25,16 +24,45 @@ To write a Python program to convert a given Infix expression to Postfix express
 7. **Print the result.**
 8. **End the program.**
 
----
+
 
 ### PROGRAM
 
-```
+Operators = set(['%','*','|','(',')'])   <br />
+priority = {'|':1,'%':2,'*':2}  <br />
+ 
+ 
+def infixToPostfix(expression):   <br />
 
-```
+ stack = []  <br />
+    output = ''  <br />
+    for i in expression:  <br />
+        if i not in Operators:  <br />
+               output+=i  <br />
+        elif i=='(':  <br />
+            stack.append(i)  <br />
+        elif i==')':  <br />
+            while stack and stack[-1]!='(':  <br />
+                output+=stack.pop()  <br />
+            stack.pop()  <br />
+        else: <br />
+            while stack and stack[-1]!='(' and priority[i]<=priority[stack[-1]]:  <br />
+                output+=stack.pop()  <br />
+            stack.append(i)  <br />
+            
+   while stack:  <br />
+        output+=stack.pop()  <br />
+    
+               
+ return output <br />
+    
+expression=input()  <br />
+print("infix notation: ",expression)  <br />
+print("postfix notation: ",infixToPostfix(expression))
 
 ### OUTPUT
 
+![Screenshot 2025-05-07 103302](https://github.com/user-attachments/assets/eec1bf7a-59ac-418e-8255-35c13b49c36d)
 
 ### RESULT
-
+Thus, the given python program is implemented and executed sucessfully.

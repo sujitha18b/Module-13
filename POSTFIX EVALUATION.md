@@ -31,36 +31,37 @@ To write a Python program to evaluate a user-given Postfix expression that conta
 
 ### PROGRAM
 
-OPERATORS=set(['*','-','+','%','/','**']) 
+OPERATORS=set(['*','-','+','%','/','**'])  <br />
 
 
-def evaluate_postfix(expression):
-    stack=[] 
-    for C in expression:
-        if C not in OPERATORS:
-            stack.append(int(C))
-        else:
-            second = stack.pop()
-            first  = stack.pop()
-            if C == '+':
-                res = int(first)+int(second)
-            elif C == '-':
-                res = int(first)-int(second)
-            elif C == '*':
-                res = int(first)*int(second)
-            elif C == '%':
-                res = int(first)%int(second)
-            elif C == '/':
-                res = int(first)/int(second)
-            elif C == '**':
-                res = int(first)**int(second)
-            stack.append(res)
-    return stack[0]
+def evaluate_postfix(expression):  <br />
+    stack=[]  <br />
+    for C in expression: <br />
+        if C not in OPERATORS: <br />
+            stack.append(int(C)) <br />
+            stack.append(int(C)) <br />
+        else:  <br />
+            second = stack.pop()  <br />
+            first  = stack.pop()  <br />
+            if C == '+':  <br />
+                res = int(first)+int(second)  <br />
+            elif C == '-':  <br />
+                res = int(first)-int(second) <br />
+            elif C == '*':  <br />
+                res = int(first)*int(second)  <br />
+            elif C == '%': <br />
+                res = int(first)%int(second) <br />
+            elif C == '/':  <br />
+                res = int(first)/int(second)  <br />
+            elif C == '**':  <br />
+                res = int(first)**int(second)  <br />
+            stack.append(res) <br />
+    return stack[0] <br />
 
 
 
-expression = input()
-print("postfix expression: ",expression)
+expression = input()  <br />
+print("postfix expression: ",expression)  <br />
 print("Evaluation result: ",evaluate_postfix(expression))
 
 ### OUTPUT
